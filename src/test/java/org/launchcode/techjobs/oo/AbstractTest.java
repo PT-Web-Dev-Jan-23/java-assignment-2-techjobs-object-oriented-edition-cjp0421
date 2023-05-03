@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 /**
  * Created by LaunchCode
  */
-public class AbstractTest {
+public class  AbstractTest {
 
     public Class getClassByName(String className) throws ClassNotFoundException {
         return Class.forName("org.launchcode.techjobs.oo." + className);
