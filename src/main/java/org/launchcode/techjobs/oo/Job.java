@@ -95,4 +95,18 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+        return "\nid: " + id + "\n" +
+                "name: " + name + '\'' +"\n" +
+                "employer=" + employer +"\n" +
+                "location=" + location +"\n" +
+                "positionType=" + positionType +"\n" +
+                "coreCompetency=" + coreCompetency +
+                "\n";
+    }
+
+
+
 }

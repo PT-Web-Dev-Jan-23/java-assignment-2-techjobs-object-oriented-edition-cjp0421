@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo.test;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -14,6 +16,9 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class JobTest {
 
+    public static Job jobA = new Job("Ghostbuster", new Employer("The City of New York"), new Location("New York City"), new PositionType("Pest control"),new CoreCompetency("Good aim"));
+
+
     @Test
     public void testSettingJobId(){
         Job job1 = new Job();
@@ -23,18 +28,18 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields(){
-        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(job1.getName(),"Product tester");
-        assertEquals(job1.getEmployer().getValue(), "ACME");
-        assertEquals(job1.getLocation().getValue(), "Desert");
-        assertEquals(job1.getPositionType().getValue(), "Quality control");
-        assertEquals(job1.getCoreCompetency().getValue(), "Persistence");
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(job5.getName(),"Product tester");
+        assertEquals(job5.getEmployer().getValue(), "ACME");
+        assertEquals(job5.getLocation().getValue(), "Desert");
+        assertEquals(job5.getPositionType().getValue(), "Quality control");
+        assertEquals(job5.getCoreCompetency().getValue(), "Persistence");
 
-        assertTrue(job1 instanceof Job);
-        assertTrue(job1.getEmployer() instanceof Employer);
-        assertTrue(job1.getLocation() instanceof Location);
-        assertTrue(job1.getPositionType() instanceof PositionType);
-        assertTrue(job1.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(job5 instanceof Job);
+        assertTrue(job5.getEmployer() instanceof Employer);
+        assertTrue(job5.getLocation() instanceof Location);
+        assertTrue(job5.getPositionType() instanceof PositionType);
+        assertTrue(job5.getCoreCompetency() instanceof CoreCompetency);
     }
 
     @Test
@@ -44,4 +49,18 @@ public class JobTest {
 
         assertFalse(job3.equals(job4));
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        String jobTemplate = "\n"+"ID: " + jobA.getId() + "\n";
+
+        assertEquals(jobA.toString().charAt(0), jobTemplate.toString().charAt(0));
+        assertEquals(jobA.toString().charAt(jobA.toString().length()-1), jobTemplate.charAt(jobTemplate.length()-1));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+
+    }
+
 }
