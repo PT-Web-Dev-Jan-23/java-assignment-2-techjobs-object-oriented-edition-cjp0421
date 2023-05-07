@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 public class JobTest {
 
     public static Job jobA = new Job("Ghostbuster", new Employer("The City of New York"), new Location("New York City"), new PositionType("Pest control"),new CoreCompetency("Good aim"));
-
+    public static Job jobB = new Job("Assistant to the Super Villain", new Employer("Super Villains' Super Temp Agency"), new Location("Secret Lair"), new PositionType(""), new CoreCompetency(""));
 
     @Test
     public void testSettingJobId(){
@@ -60,7 +60,25 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
+        String jobBTemplate = "\nID: "+ jobB.getId()+"\n" +
+                "Name: Assistant to the Super Villain\n"+
+                "Employer: Super Villains' Super Temp Agency\n"+
+                "Location: Secret Lair\n" +
+                "Position Type: Data not available\n"+
+                "Core Competency: Data not available\n";
 
+        assertEquals(jobB.toString(), jobBTemplate);
+    }
+    @Test
+    public void testToStringHandlesEmptyField(){
+        String jobBTemplate = "\nID: "+ jobB.getId()+"\n" +
+                "Name: Assistant to the Super Villain\n"+
+                "Employer: Super Villains' Super Temp Agency\n"+
+                "Location: Secret Lair\n" +
+                "Position Type: Data not available\n"+
+                "Core Competency: Data not available\n";
+
+        assertEquals(jobB.toString(), jobBTemplate);
     }
 
 }

@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Job {
@@ -29,7 +31,24 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+
+        if(name.isEmpty()) {
+            this.name = "Data not available";
+        }
+        if(employer.toString().isEmpty()) {
+            this.employer = new Employer("Data not available");
+        }
+        if(location.toString().isEmpty()) {
+            this.location = new Location("Data not available");
+        }
+        if(positionType.toString().isEmpty()) {
+            this.positionType = new PositionType("Data not available");
+        }
+        if(coreCompetency.toString().isEmpty()) {
+            this.coreCompetency = new CoreCompetency("Data not available");
+        }
     }
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -98,13 +117,18 @@ public class Job {
 
     @Override
     public String toString() {
-        return "\nid: " + id + "\n" +
-                "name: " + name + '\'' +"\n" +
-                "employer=" + employer +"\n" +
-                "location=" + location +"\n" +
-                "positionType=" + positionType +"\n" +
-                "coreCompetency=" + coreCompetency +
-                "\n";
+
+        String idString = "\nID: " + id + "\n";
+        String nameString = "Name: " + name +"\n";
+        String employerString = "Employer: " + employer +"\n";
+        String locationString = "Location: " + location +"\n" ;
+        String positionString = "Position Type: " + positionType +"\n";
+        String coreString = "Core Competency: " + coreCompetency+"\n";
+
+        String jobTemplate = idString+nameString+employerString+locationString+positionString+coreString;
+
+        return jobTemplate;
+
     }
 
 
