@@ -19,7 +19,7 @@ public abstract class JobField {
         nextId++;
     }
 
-    public JobField(int id, String value) {
+    public JobField(String value) {
         this();
         this.value = value;
     }
@@ -27,7 +27,6 @@ public abstract class JobField {
     public void setValue(String value) {
         this.value = value;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

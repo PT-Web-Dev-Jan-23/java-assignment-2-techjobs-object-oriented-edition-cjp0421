@@ -13,9 +13,9 @@ public class PositionType extends JobField{
         nextId++;
     }
 
-    public PositionType(String value) {
-        this();
-        this.value = value;
+    public PositionType(String value, String value1) {
+        super(value);
+        this.value = value1;
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
