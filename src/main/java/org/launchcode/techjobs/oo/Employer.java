@@ -4,25 +4,29 @@ import java.util.Objects;
 
 public class Employer extends JobField{
 
-    private int id;
-    private static int nextId = 1;
-    private String value;
+//    private int id;
+//    private static int nextId = 1;
+//    private String value;
 
-    public Employer() {
-        id = nextId;
-        nextId++;
-    }
+//    public Employer() {
+//        id = nextId;
+//        nextId++;
+//    }
+//
+//    public Employer(String value) {
+//        this();
+//        this.value = value;
+//    }
 
-    public Employer(String value) {
-        this();
-        this.value = value;
+    public Employer(String value){
+        super(value);
     }
 
     // Custom toString, equals, and hashCode methods:
 
     @Override
     public String toString() {
-        return value;
+        return getValue();
     }
 
     @Override
@@ -40,16 +44,16 @@ public class Employer extends JobField{
 
     // Getters and Setters:
 
-    public int getId() {
-        return id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+//    public int getId() {
+//        return super.getId();
+//    }
+//
+//    public String getValue() {
+//        return super.getValue();
+//    }
+//
+//    public void setValue(String value) {
+//        this.value = value;
+//    }
 
 }
